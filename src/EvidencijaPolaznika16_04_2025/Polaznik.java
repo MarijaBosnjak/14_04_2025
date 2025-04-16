@@ -19,7 +19,7 @@ Svi polaznici moraju biti cijelo vrijeme sortirani po prezimenu uzlazno
 Iskorisitit TreeSet() i sučelje Comparable*/
 
 
-public class Polaznik {
+public class Polaznik implements Comparable<Polaznik> {
     private String ime;
     private String prezime;
     private String email;
@@ -59,4 +59,15 @@ public class Polaznik {
     public int hashCode() {
         return email.toLowerCase().hashCode();
     }
+
+    @Override
+    public int compareTo(Polaznik o) {
+        // Prvo po prezimenu
+        int cmp = this.prezime.compareToIgnoreCase(o.prezime);
+        if (cmp != 0)
+            return cmp;
+        // Ako su prezimena ista, možemo dodatno po imenu (ili emailu)
+        return this.ime.compareToIgnoreCase(o.ime);
+    }
 }
+

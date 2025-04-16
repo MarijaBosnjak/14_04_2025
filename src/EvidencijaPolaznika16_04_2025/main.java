@@ -5,11 +5,12 @@ package EvidencijaPolaznika16_04_2025;
 
 import java.util.HashSet;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class main {
     public static void main(String[] args) {
-        HashSet<Polaznik> dodajemPolaznike = new HashSet<>();
-
+     //   HashSet<Polaznik> dodajemPolaznike = new HashSet<>();
+        TreeSet<Polaznik> dodajemPolaznike = new TreeSet<>();
         // Dodavanje početnih polaznika
         dodajemPolaznike.add(new Polaznik("Ana", "Anić", "Anaanic@gmail.com"));
         dodajemPolaznike.add(new Polaznik("Pero", "Perić", "PeroPeric@gmail.com"));
